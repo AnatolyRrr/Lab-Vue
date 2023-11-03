@@ -1,10 +1,10 @@
-import type { IPeopleDataTable } from '@/types'
+import type { IPeopleData } from '@/types'
 
 export const getFavorites = () => {
   return JSON.parse(localStorage.getItem('favorites') as string) || []
 }
 
-export const changeFavorite = (item: IPeopleDataTable) => {
+export const changeFavorite = (item: IPeopleData) => {
   const oldFavorites = getFavorites()
   const newFavorites = []
 
@@ -12,7 +12,7 @@ export const changeFavorite = (item: IPeopleDataTable) => {
     newFavorites.push(...oldFavorites, item)
   } else {
     const filteredFavorites = oldFavorites.filter(
-      (favorite: IPeopleDataTable) => favorite.name !== item.name
+      (favorite: IPeopleData) => favorite.name !== item.name
     )
     newFavorites.push(...filteredFavorites)
   }
