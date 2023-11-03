@@ -19,6 +19,15 @@ defineProps<{
 button {
   border: none;
   padding: 8px;
+  transition: box-shadow 200ms ease-in-out;
+
+  &:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .size-normal {

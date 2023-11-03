@@ -2,7 +2,7 @@
   <div v-click-outside="closeList" class="custom-search">
     <div class="input-wrapper">
       <input v-model="search" type="text" />
-      <button @click="searchPeople">Search</button>
+      <BaseButton border-radius="0 8px 8px 0" @click="searchPeople">Search</BaseButton>
     </div>
 
     <div v-show="isOpenList" class="list-wrapper">
@@ -36,6 +36,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { getPeople } from '@/api'
+import BaseButton from './BaseButton.vue'
 import vClickOutside from '@/directives/clickOutside'
 import type { IPeopleData } from '@/types'
 
@@ -77,8 +78,19 @@ const closeList = () => {
 
 <style scoped lang="scss">
 .custom-search {
-  max-width: max-content;
   position: relative;
+  max-width: 340px;
+
+  .input-wrapper {
+    display: flex;
+
+    input {
+      padding: 0 12px;
+      border-radius: 8px 0 0 8px;
+      border: 1px solid #e5e7eb;
+      line-height: 8px;
+    }
+  }
 
   .list-wrapper {
     position: absolute;

@@ -15,6 +15,7 @@ header {
   min-height: 60px;
   padding: 0 2rem;
   background: #ffffff;
+  border-radius: 0 0 12px 12px;
 
   nav {
     margin-left: auto;
