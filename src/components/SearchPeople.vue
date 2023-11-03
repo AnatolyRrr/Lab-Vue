@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-search">
+  <div v-click-outside="closeList" class="custom-search">
     <div class="input-wrapper">
       <input v-model="search" type="text" />
       <button @click="searchPeople">Search</button>
@@ -36,6 +36,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { getPeople } from '@/api'
+import vClickOutside from '@/directives/clickOutside'
 import type { IPeopleData } from '@/types'
 
 const router = useRouter()
@@ -67,6 +68,10 @@ const selectPeople = (item: IPeopleData) => {
   isOpenList.value = false
   const id = (item.url.match(/[0-9]+/gm) as string[])[0]
   router.push(`/people/${id}`)
+}
+
+const closeList = () => {
+  isOpenList.value = false
 }
 </script>
 
