@@ -35,20 +35,20 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
-import BaseButton from '@/components/BaseButton.vue'
-import { colors } from '@/style'
+import { defineProps, defineEmits } from 'vue';
+import BaseButton from '@/components/BaseButton.vue';
+import { colors } from '@/style';
 
 defineProps<{
-  disabled: boolean
+  disabled: boolean;
   data: {
-    page: number
-    total: number
-    size: number
-  }
-}>()
+    page: number;
+    total: number;
+    size: number;
+  };
+}>();
 
-defineEmits(['change-page'])
+defineEmits(['change-page']);
 </script>
 
 <style scoped lang="scss">

@@ -41,22 +41,22 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
-import BaseButton from '@/components/BaseButton.vue'
-import { colors } from '@/style'
+import { defineProps, defineEmits } from 'vue';
+import BaseButton from '@/components/BaseButton.vue';
+import { colors } from '@/style';
 
 defineProps<{
   columns: {
-    label: string
-    name: string
-  }[]
+    label: string;
+    name: string;
+  }[];
   data: {
-    [key: string]: string | number | boolean
-  }[]
-  loading?: boolean
-}>()
+    [key: string]: string | number | boolean;
+  }[];
+  loading?: boolean;
+}>();
 
-defineEmits(['change-favorite'])
+defineEmits(['change-favorite']);
 </script>
 
 <style scoped lang="scss">

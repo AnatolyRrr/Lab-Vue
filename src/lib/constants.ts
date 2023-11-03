@@ -19,4 +19,4 @@ export const tableColumns = [
     label: 'Favorites',
     name: 'isFavorite'
   }
-]
+];

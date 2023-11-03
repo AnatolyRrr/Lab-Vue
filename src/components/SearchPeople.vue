@@ -33,47 +33,47 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { getPeople } from '@/api'
-import BaseButton from './BaseButton.vue'
-import vClickOutside from '@/directives/clickOutside'
-import type { IPeopleData } from '@/types'
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { getPeople } from '@/api';
+import BaseButton from './BaseButton.vue';
+import vClickOutside from '@/directives/clickOutside';
+import type { IPeopleData } from '@/types';
 
-const router = useRouter()
-const search = ref('')
-const loading = ref(false)
-const isOpenList = ref(false)
-const peopleList = ref<IPeopleData[]>([])
+const router = useRouter();
+const search = ref('');
+const loading = ref(false);
+const isOpenList = ref(false);
+const peopleList = ref<IPeopleData[]>([]);
 
 const getPeopleList = () => {
-  loading.value = true
+  loading.value = true;
 
   getPeople(search.value)
     .then((res) => {
       if (res?.data) {
-        peopleList.value = res.data.results
+        peopleList.value = res.data.results;
       }
     })
     .finally(() => {
-      loading.value = false
-    })
-}
+      loading.value = false;
+    });
+};
 
 const searchPeople = () => {
-  isOpenList.value = true
-  getPeopleList()
-}
+  isOpenList.value = true;
+  getPeopleList();
+};
 
 const selectPeople = (item: IPeopleData) => {
-  isOpenList.value = false
-  const id = (item.url.match(/[0-9]+/gm) as string[])[0]
-  router.push(`/people/${id}`)
-}
+  isOpenList.value = false;
+  const id = (item.url.match(/[0-9]+/gm) as string[])[0];
+  router.push(`/people/${id}`);
+};
 
 const closeList = () => {
-  isOpenList.value = false
-}
+  isOpenList.value = false;
+};
 </script>
 
 <style scoped lang="scss">

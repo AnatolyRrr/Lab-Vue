@@ -1,3 +1,3 @@
-import * as colors from "./colors/index";
+import * as colors from './colors/index';
 
 export { colors };

@@ -5,14 +5,14 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { defineProps } from 'vue';
 
 defineProps<{
-  color?: string
-  size?: 'small' | 'normal'
-  bgColor?: string
-  borderRadius?: string
-}>()
+  color?: string;
+  size?: 'small' | 'normal';
+  bgColor?: string;
+  borderRadius?: string;
+}>();
 </script>
 
 <style scoped lang="scss">
