@@ -13,7 +13,11 @@
         <tr v-for="(item, index) in data" :key="'row' + index">
           <td v-for="(key, index) in columns" :key="'row-key' + index">
             <span v-if="key.name === 'isFavorite'">
-              <BaseButton :bg-color="item[key.name] ? '#ffcaca' : '#d6f4d1'" border-radius="8px" @click="$emit('change-favorite', item)">
+              <BaseButton
+                :bg-color="item[key.name] ? colors.Status.ErrorSmoke : colors.Status.SuccessSmoke"
+                border-radius="8px"
+                @click="$emit('change-favorite', item)"
+              >
                 {{ item[key.name] ? 'Remove' : 'Add' }}
               </BaseButton>
             </span>
@@ -39,6 +43,7 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue'
 import BaseButton from '@/components/BaseButton.vue'
+import { colors } from '@/style'
 
 defineProps<{
   columns: {
@@ -56,14 +61,14 @@ defineEmits(['change-favorite'])
 
 <style scoped lang="scss">
 .base-table {
-  border: 1px solid #e5e7eb;
+  border: 1px solid $greySmoke;
   border-radius: 8px;
 
   table {
     width: 100%;
 
     thead {
-      background-color: #f7f9fa;
+      background-color: $greyLight;
 
       th {
         text-align: start;

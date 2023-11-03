@@ -87,7 +87,7 @@ const closeList = () => {
     input {
       padding: 0 12px;
       border-radius: 8px 0 0 8px;
-      border: 1px solid #e5e7eb;
+      border: 1px solid $greySmoke;
       line-height: 8px;
     }
   }
@@ -97,9 +97,9 @@ const closeList = () => {
     width: 100%;
     margin-top: 16px;
     padding: 8px 0;
-    background: #ffffff;
+    background: $white;
     border-radius: 4px;
-    box-shadow: 0px 4px 10px 0px #dcdcdc99;
+    box-shadow: 0px 4px 10px 0px $shadow;
 
     div {
       span {
@@ -113,7 +113,7 @@ const closeList = () => {
 
     .list-item {
       :hover {
-        background: #d5e9fe;
+        background: $blue;
       }
     }
   }

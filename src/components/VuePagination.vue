@@ -2,7 +2,7 @@
   <div class="pagination">
     <BaseButton
       border-radius="8px"
-      color="#283f69"
+      :color="colors.Main.Primary"
       :disabled="disabled || data.page === 1"
       @click="$emit('change-page', data.page - 1)"
     >
@@ -14,8 +14,8 @@
         v-if="page <= data.page + 3 && page >= data.page - 3"
         border-radius="50%"
         class="page-btn"
-        :bgColor="page === data.page ? '#283f69' : ''"
-        :color="page === data.page ? '#ffffff' : '#283f69'"
+        :bgColor="page === data.page ? colors.Main.Primary : ''"
+        :color="page === data.page ? colors.Base.White : colors.Main.Primary"
         :disabled="disabled"
         @click="$emit('change-page', page)"
       >
@@ -26,7 +26,7 @@
     <BaseButton
       border-radius="8px"
       :disabled="disabled || data.page === data.total"
-      color="#283f69"
+      :color="colors.Main.Primary"
       @click="$emit('change-page', data.page + 1)"
     >
       Next
@@ -37,6 +37,7 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue'
 import BaseButton from '@/components/BaseButton.vue'
+import { colors } from '@/style'
 
 defineProps<{
   disabled: boolean

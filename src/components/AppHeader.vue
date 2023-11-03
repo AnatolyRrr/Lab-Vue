@@ -14,7 +14,7 @@ header {
   align-items: center;
   min-height: 60px;
   padding: 0 2rem;
-  background: #ffffff;
+  background: $white;
   border-radius: 0 0 12px 12px;
 
   nav {
@@ -23,21 +23,21 @@ header {
     a {
       font-size: 24px;
       padding: 0 12px;
-      color: #283f69;
-      border-left: 1px solid #000000;
+      color: $primary;
+      border-left: 1px solid $black;
 
       &:first-of-type {
         border-left: none;
       }
 
       &:hover {
-        color: #f7ab05;
+        color: $secondary;
         transition: color 200ms ease-in-out;
       }
     }
 
     .router-link-exact-active {
-      color: #f7ab05;
+      color: $secondary;
       text-decoration: underline;
     }
   }

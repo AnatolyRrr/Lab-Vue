@@ -2,11 +2,11 @@
   min-height: 100vh;
   height: max-content;
   padding-bottom: 40px;
-  background: #e3e5e6;
+  background: $grey;
 }
 
 * {
-  color: #000000;
+  color: $black;
 }
 
 a {
@@ -19,6 +19,6 @@ a {
   gap: 16px;
   margin: 40px;
   padding: 2rem;
-  background: #ffffff;
+  background: $white;
   border-radius: 12px;
 }
